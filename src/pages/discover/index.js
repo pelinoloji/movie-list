@@ -25,41 +25,34 @@ export default class Discover extends React.Component {
         { id: 8.5, name: 8.5 },
         { id: 9, name: 9 },
         { id: 9.5, name: 9.5 },
-        { id: 10, name: 10 }
+        { id: 10, name: 10 },
       ],
       languageOptions: [
         { id: "GR", name: "Greek" },
         { id: "EN", name: "English" },
         { id: "RU", name: "Russian" },
-        { id: "PO", name: "Polish" }
-      ]
+        { id: "PO", name: "Polish" },
+      ],
     };
   }
 
-  // Write a function to preload the popular movies when page loads & get the movie genres
   componentDidMount() {
     getMovieGenres()
-      .then(response => {
+      .then((response) => {
         const genres = response.data.genres || [];
         this.setState({ genreOptions: genres });
         console.log(genres);
       })
-      .catch(error => console.log(error, "error"));
+      .catch((error) => console.log(error, "error"));
     getMovies()
-      .then(response => {
+      .then((response) => {
         const movies = response.data.results || [];
         const moviesLength = response.data.total_results;
         this.setState({ results: movies, totalCount: moviesLength }, () =>
           console.log(movies)
         );
       })
-      .catch(error => console.log(error, "error"));
-  }
-
-  // Write a function to get the movie details based on the movie id taken from the URL.
-
-  async searchMovies(keyword, year) {
-    // Write a function to trigger the API request and load the search results based on the keyword and year given as parameters
+      .catch((error) => console.log(error, "error"));
   }
 
   render() {
@@ -69,7 +62,7 @@ export default class Discover extends React.Component {
       ratingOptions,
       totalCount,
       results,
-      movieDetails
+      movieDetails,
     } = this.state;
 
     return (
@@ -79,7 +72,6 @@ export default class Discover extends React.Component {
         <MovieResults>
           {totalCount > 0 && <TotalCounter>{totalCount} results</TotalCounter>}
           <MovieList movies={results || []} genres={genreOptions || []} />
-          {/* Each movie must have a unique URL and if clicked a pop-up should appear showing the movie details and the action buttons as shown in the wireframe */}
         </MovieResults>
 
         <MovieFilters>

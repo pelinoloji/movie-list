@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import * as colors from "../../colors";
-import ExpandableFilters from "../../components/expandablefilters";
 import SearchBar from "../../components/searchbar";
 
 export default class SearchFilters extends React.Component {
@@ -13,8 +12,6 @@ export default class SearchFilters extends React.Component {
       showRates: false,
       showLanguage: false,
     };
-    // this.handleChangeSearchKey = this.handleChangeSearchKey.bind(this);
-    // this.flipShowTitles = this.flipShowTitles.bind(this);
   }
 
   flipShowGenres() {
@@ -35,12 +32,10 @@ export default class SearchFilters extends React.Component {
     return (
       <FiltersWrapper>
         <SearchFiltersCont className="search_inputs_cont" marginBottom>
-          {/* Implement a SearchBar component and use it for both the keyword and the year inputs */}
           <SearchBar />
         </SearchFiltersCont>
         <SearchFiltersCont>
           <CategoryTitle>Movie</CategoryTitle>
-          {/* Implement a component called "ExpandableFilters" and use it for the filter categories */}
         </SearchFiltersCont>
 
         <SearchFiltersCont>

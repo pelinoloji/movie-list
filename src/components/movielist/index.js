@@ -2,22 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import * as colors from "../../colors";
 
-import MovieItem from "../movieitem";
-
 export default class MovieList extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //    this.state = { movies: [] };
-  // }
-
   render() {
     const { movies, genres } = this.props;
 
     return (
       <MoviesWrapper>
-        {/* Finish the MovieItem component and use it here to display the movie results */}
-        {/* this.state.data.map(movie => movie.title)*/}
-        {movies.map(movie => (
+        {movies.map((movie) => (
           <Movies key={movie.id}>
             <MovieItems>
               <MovieImageArea>

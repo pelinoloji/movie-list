@@ -7,7 +7,6 @@ import Arrow from "../../images/arrow-icon.png";
 import SearchWhite from "../../images/search-icon-white.png";
 
 export default class SideNavBar extends React.Component {
-  /* Write the necessary functions to show/hide the side bar on mobile devices */
   constructor(props) {
     super(props);
     this.state = false;
@@ -18,7 +17,6 @@ export default class SideNavBar extends React.Component {
 
     return (
       <SideNavBarCont className={activeSideBar && "visible"}>
-        {/* Implement a hamburger icon slide in effect for mobile devices */}
         <SideNavMainLink
           className="menu_nav_link main_nav_link"
           to="/"

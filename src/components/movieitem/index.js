@@ -4,7 +4,6 @@ import styled from "styled-components";
 export default class MovieItem extends React.Component {
   render() {
     return (
-      // The MovieItemWrapper must be linked to the movie details popup
       <MovieItemWrapper>
         <LeftCont>asd</LeftCont>
         <RightCont>123</RightCont>
